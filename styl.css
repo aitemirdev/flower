@@ -984,3 +984,88 @@ body {
 .not-loaded * {
     animation-play-state: paused !important;
 }
+
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.birthday-message {
+    font-size: 48px;
+    color: #d5d9d9; /* Неоново-голубой цвет */
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #026090; /* Эффект неона */
+    animation: fadeIn 1s forwards;
+    opacity: 0; /* Изначально скрываем текст */
+    animation-delay: 0s; /* Появление "С Днем Рождения" без задержки */
+}
+
+.name-message {
+    font-size: 36px;
+    color: #dcd6d9; /* Неоново-голубой цвет */
+    text-shadow: 0 0 10px #88ffff, 0 0 20px #026090; /* Эффект неона */
+    opacity: 0; /* Изначально скрываем текст */
+    animation: fadeIn 1s forwards; /* Анимация появления */
+    animation-delay: 0.5s; /* Задержка появления на 0.5 секунды */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Начальное состояние (невидим) */
+        transform: translateY(-20px); /* Смещение вверх */
+    }
+    to {
+        opacity: 1; /* Конечное состояние (видим) */
+        transform: translateY(0); /* Без смещения */
+    }
+}
+
+.fireworks {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.firework {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes explosion {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes spark {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
